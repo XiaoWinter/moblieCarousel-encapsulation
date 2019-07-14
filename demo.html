@@ -4,24 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit:cover">
     <title>Title</title>
+    <!--    reset-->
+    <link rel="stylesheet" href="css/reset.css">
+<!--    轮播css样式-->
     <link rel="stylesheet" href="css/m-lunbo.css">
+<!--    轮播实现文件的依赖-->
     <script src="js/transform.js"></script>
+<!--    轮播实现文件-->
     <script src="js/m-lunbo.js"></script>
+<!--    这个是你的js文件-->
     <script src="js/demo.js"></script>
 </head>
 <body>
     <div id="app">
+<!--        轮播容器，必选-->
         <div class="swiper">
+<!--            类名固定，必选-->
             <ul class="swiper-wrap">
+<!--                类名固定，写入自己的图片的路径，必选，图片数量自定义-->
                 <li class="swiper-item"><img src="img/1.jpg" alt=""></li>
                 <li class="swiper-item"><img src="img/2.jpg" alt=""></li>
                 <li class="swiper-item"><img src="img/3.jpg" alt=""></li>
                 <li class="swiper-item"><img src="img/4.jpg" alt=""></li>
                 <li class="swiper-item"><img src="img/5.jpg" alt=""></li>
             </ul>
-            <div class="icons">
-
-            </div>
+<!--            轮播点，可选-->
+            <div class="icons"></div>
         </div>
     </div>
 </body>
