@@ -20,11 +20,11 @@
   
   |--js
   
-  |--|--m-lunbo.js
+  |  |--m-lunbo.js
   
-  |--|--transfrom.js
+  |  |--transfrom.js
   
-  |--|--demo.js
+  |  |--demo.js
   
   |--demo.js
 
