@@ -5,16 +5,27 @@
 ## 项目结构
 
 |--项目名
+
   |--css
+  
   |  |--reset.css
+  
   |  |--m-lunbo.css
+  
   |--img
+  
   |  |--你的图片.jpg
+  
   |  |--你的图片.jpg
+  
   |--js
+  
   |--|--m-lunbo.js
+  
   |--|--transfrom.js
+  
   |--|--demo.js
+  
   |--demo.js
 
 
