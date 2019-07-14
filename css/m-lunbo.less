@@ -1,0 +1,47 @@
+@import "reset";
+//应用
+
+  .swiper{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    .swiper-wrap{
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      //transition: .5s;
+      .swiper-item{
+
+        font-size: 0;
+        img{
+          width: 100%;
+        }
+      }
+    }
+
+    //轮播按钮
+    .icons{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      span{
+        display: inline-block;
+        margin: 2px 0 0;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #000;
+        &.active{
+          background-color: red;
+        }
+      }
+    }
+  }
+  .content{
+    height: 400%;
+    background-color: #def;
+  }
