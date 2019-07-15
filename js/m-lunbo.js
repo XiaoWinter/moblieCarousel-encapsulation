@@ -12,6 +12,7 @@
      *      delay 延时多少,单位毫秒 默认2000
      *      autoplayTransition:自动轮播的过渡时间 单位毫秒 默认时间500ms
      *      slideTransition：滑动轮播图的过渡时间 单位毫秒 默认时间500ms
+     *      gpu:是否开启gpu加速 默认为true
      * }
      */
     w.G_G.mLunbo =
@@ -28,7 +29,8 @@
             let isAutoplay = options.isAutoplay;
             let delay = options.delay || 2000;
             let autoplayTransition = options.autoplayTransition || 500;
-            let slideTransition = options.slideTransition || 500
+            let slideTransition = options.slideTransition || 500;
+           let gpu = options.gpu !== false;
 
            let transformCss = G_G.transformCss;
 
@@ -57,6 +59,9 @@
                 pointers = swiper.querySelectorAll('.' + icons + ' span');
             }
             let lunboId;
+           if (gpu){
+               transformCss(swiperWrap,'translateZ',0);
+           }
 
             swiperWrap.style.width = swiperItems.length * 200 + '%';
 
@@ -80,7 +85,7 @@
              * 记录初始位置
              */
             swiperWrap.addEventListener('touchstart', function (e) {
-                autoplay(false);
+                autoplay(false,delay);
                 swiperWrap.style.transition = '0s';
                 if (currentPage <= 0) {
                     setCurrent(itemLength);
@@ -127,7 +132,7 @@
              * 左右划过一屏
              */
             swiperWrap.addEventListener('touchend', function (e) {
-                autoplay(true);
+                autoplay(true,delay);
                 swiperWrap.style.transition = slideTransition + 'ms';
 
                 //一次滑动的时间
@@ -148,6 +153,7 @@
 
             /*轮播过渡结束后从最右边切换到中间*/
             swiperWrap.addEventListener('transitionend', function (e) {
+
                 if (currentPage >= swiperItems.length - 1) {
                     swiperWrap.style.transition = '0s';
                     setCurrent(itemLength - 1);
@@ -169,7 +175,7 @@
 
                 }
                 currentPage = index;
-                // console.log(currentPage);
+                console.log(currentPage);
             }
 
             /**

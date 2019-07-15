@@ -81,16 +81,17 @@
  ## 轮播方法可选参数
  ```
      /**
-     * 移动端轮播方法
-     * @param swiper 必须的参数
-     * @param options  ： {
-     *      icons 小圆点的包裹元素的类 字符串
-     *      isAutoplay  是否自动轮播 布尔值 默认false
-     *      delay 延时多少,单位毫秒 默认2000
-     *      autoplayTransition:自动轮播的过渡时间 单位毫秒 默认时间500ms
-     *      slideTransition：滑动轮播图的过渡时间 单位毫秒 默认时间500ms
-     * }
-     */
+      * 移动端轮播方法
+      * @param swiper 必须的参数
+      * @param options  ： {
+      *      icons 小圆点的包裹元素的类 字符串
+      *      isAutoplay  是否自动轮播 布尔值 默认false
+      *      delay 延时多少,单位毫秒 默认2000
+      *      autoplayTransition:自动轮播的过渡时间 单位毫秒 默认时间500ms
+      *      slideTransition：滑动轮播图的过渡时间 单位毫秒 默认时间500ms
+      *      gpu:是否开启gpu加速 默认为true
+      * }
+      */
      w.G_G.mLunbo = function (swiper, options){...};
  ```
  

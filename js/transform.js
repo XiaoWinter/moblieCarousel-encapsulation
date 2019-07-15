@@ -26,6 +26,7 @@
 				switch (i) {
 					case 'translateX':
 					case 'translateY':
+					case 'translateZ':
 					case 'translate':
 						result += `${i}(${node.transform[i]}px)`;
 						break;
