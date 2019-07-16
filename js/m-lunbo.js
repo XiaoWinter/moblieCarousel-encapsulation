@@ -104,9 +104,12 @@
 
 
             /**
-             * 左右划移动
+             * 左右划移动,
+             * 通过isHorizontal以及isFrist保留参数进行防抖，（水平运动的时候不会垂直方向移动，垂直方向移动的时候不会让幻灯片水平移动）
              */
             swiperWrap.addEventListener('touchmove', function (e) {
+
+                if (!swiperWrap.isHorizontal) return;
 
                 let dalteX = e.changedTouches[0].clientX - swiperWrap.startX;
                 let dalteY = e.changedTouches[0].clientY - swiperWrap.startY;
@@ -116,15 +119,20 @@
                     if (Math.abs(dalteX) < Math.abs(dalteY)) {//纵向
                         swiperWrap.isHorizontal = false;
                     }
+                    swiperWrap.isFrist = false;
                 }
 
                 if (swiperWrap.isHorizontal) {
                     //横向移动
                     let left = swiperWrap.posX + dalteX;
                     //以动画移动
-                    e.preventDefault();
+
                     transformCss(swiperWrap, 'translateX', left);
                 }
+
+                //若为水平移动，阻止默认行为，阻止冒泡
+                e.preventDefault();
+                e.stopPropagation();
 
             });
 
